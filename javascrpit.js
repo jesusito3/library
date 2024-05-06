@@ -14,9 +14,17 @@ function Book(title, author, pages, read) {
 // console.log(book1.info());
 
 function addBookToLibrary(title, author, pages, read) {
-    const newBook = Book(title, author, pages, read);
+    const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 }
 
 addBookToLibrary("Northanger Abbey", "Jane Austen", 235, "read");
-console.log(myLibrary);
+addBookToLibrary("Avatar, The Last Airbender: The Rise of Kyoshi", "F.C. Yee", 448, "read");
+
+function display() {
+    for(i = 0; i < myLibrary.length; i++) {
+        console.log(myLibrary[i]);
+    }
+}
+
+display();
