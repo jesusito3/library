@@ -10,21 +10,21 @@ function Book(title, author, pages, read) {
     }
 }
 
-// const book1 = new Book("Northanger Abbey", "Jane Austen", 235, "read");
-// console.log(book1.info());
-
 function addBookToLibrary(title, author, pages, read) {
+    let newTitle = prompt("Title of book?");
+    let newAuthor = prompt("Author of book?");
+    let newPages = prompt("Number of pages?");
+    let newRead = prompt("Read or not read?");
+    title = newTitle;
+    author = newAuthor;
+    pages = newPages;
+    read = newRead;
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 }
-
-addBookToLibrary("Northanger Abbey", "Jane Austen", 235, "read");
-addBookToLibrary("Avatar, The Last Airbender: The Rise of Kyoshi", "F.C. Yee", 448, "read");
 
 function display() {
     for(i = 0; i < myLibrary.length; i++) {
         console.log(myLibrary[i]);
     }
 }
-
-display();
