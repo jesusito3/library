@@ -11,14 +11,6 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(title, author, pages, read) {
-    let newTitle = prompt("Title of book?");
-    let newAuthor = prompt("Author of book?");
-    let newPages = prompt("Number of pages?");
-    let newRead = prompt("Read or not read?");
-    title = newTitle;
-    author = newAuthor;
-    pages = newPages;
-    read = newRead;
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 }
@@ -28,3 +20,17 @@ function display() {
         console.log(myLibrary[i]);
     }
 }
+
+const newBookButton = document.getElementById("new-book");
+const dialog = document.getElementById("dialog");
+const submitButton = document.getElementById("submit");
+
+newBookButton.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+submitButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    dialog.close();
+})
+
