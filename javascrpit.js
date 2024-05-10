@@ -5,9 +5,6 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function() {
-        return `${this.title} by ${this.author}, ${pages} pages, ${this.read}`;
-    }
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -18,22 +15,23 @@ function addBookToLibrary(title, author, pages, read) {
 const table = document.getElementById("table");
 
 function display() {
+    let row = table.insertRow(-1);
+
+    let titleColumn = row.insertCell(0);
+    let authorColumn = row.insertCell(1);
+    let pagesColumn = row.insertCell(2);
+    let readColumn = row.insertCell(3);
+    let readBtnColumn = row.insertCell(4);
     for(i = 0; i < myLibrary.length; i++) {
-        let row = table.insertRow(-1);
+        
 
-        let titleColumn = row.insertCell(0);
-        let authorColumn = row.insertCell(1);
-        let pagesColumn = row.insertCell(2);
-        let readColumn = row.insertCell(3);
-        let readBtnColumn = row.insertCell(4);
-
-        titleColumn.innerHTML = Book.title;
-        authorColumn.innerHTML = Book.author;
-        pagesColumn.innerHTML = Book.pages;
-        readColumn.innerHTML = Book.read;
-
-        console.log(myLibrary[i]);
+        titleColumn.innerHTML = myLibrary[i].title;
+        authorColumn.innerHTML = myLibrary[i].author;
+        pagesColumn.innerHTML = myLibrary[i].pages;
+        readColumn.innerHTML = myLibrary[i].read;
+        
     }
+    console.log(myLibrary);
 }
 
 const newBookButton = document.getElementById("new-book");
@@ -50,6 +48,7 @@ submitButton.addEventListener("click", (event) => {
     let pagesInput = document.getElementById("pages");
     let readInput = document.getElementById("read");
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value);
+    display();
     event.preventDefault();
     dialog.close();
 })
