@@ -11,8 +11,49 @@
     <header>Current Library</header>
     <div class="books">
         <button id="new-book">New Book</button>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Read?</th>
+                    <th>Read Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Avatar The Last Airbender: The Rise of Kyoshi</td>
+                    <td>F.C. Yee</td>
+                    <td>448</td>
+                    <td>Read</td>
+                    <td><button>Read/Not read</button></td>
+                </tr>
+                <tr>
+                    <td>Avatar The Last Airbender: The Shadow of Kyoshi</td>
+                    <td>F.C. Yee</td>
+                    <td>352</td>
+                    <td>Read</td>
+                    <td><button>Read/Not read</button></td>
+                </tr>
+                <tr>
+                    <td>Northanger Abbey</td>
+                    <td>Jane Austen</td>
+                    <td>235</td>
+                    <td>Read</td>
+                    <td><button>Read/Not read</button></td>
+                </tr>
+                <tr>
+                    <td>Game of Thrones: A Song of Ice and Fire</td>
+                    <td>George R.R Martin</td>
+                    <td>807</td>
+                    <td>Not read</td>
+                    <td><button>Read/Not read</button></td>
+                </tr>
+            </tbody>
+        </table>
         <dialog id="dialog">
-            <form method="post">
+            <form id="form" method="post">
                 <fieldset>
                     <label for="title">Title:</label>
                     <input type="text" id="title" name="title">
@@ -23,7 +64,7 @@
                     <label for="pages">Pages:</label>
                     <input type="number" id="pages" name="pages">
 
-                    <label for="read">Read?:</label>
+                    <label for="read">Read/Not read?:</label>
                     <input type="text" id="read" name="read">
                 </fieldset>
                 <input type="submit" id="submit" value="Submit" />
