@@ -13,6 +13,9 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 const table = document.getElementById("table");
+const button = document.createElement("BUTTON");
+const btnText = document.createTextNode("Read/Not read");
+button.appendChild(btnText);
 
 function display() {
     let row = table.insertRow(-1);
@@ -22,6 +25,7 @@ function display() {
     let pagesColumn = row.insertCell(2);
     let readColumn = row.insertCell(3);
     let readBtnColumn = row.insertCell(4);
+    readBtnColumn.appendChild(button);
     for(i = 0; i < myLibrary.length; i++) {
         
 
