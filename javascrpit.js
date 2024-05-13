@@ -13,9 +13,7 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 const table = document.getElementById("table");
-const button = document.createElement("BUTTON");
-const btnText = document.createTextNode("Read/Not read");
-button.appendChild(btnText);
+
 
 function display() {
     let row = table.insertRow(-1);
@@ -25,16 +23,21 @@ function display() {
     let pagesColumn = row.insertCell(2);
     let readColumn = row.insertCell(3);
     let readBtnColumn = row.insertCell(4);
-    readBtnColumn.appendChild(button);
+    let removeBtnColumn = row.insertCell(5);
     for(i = 0; i < myLibrary.length; i++) {
-        
-
         titleColumn.innerHTML = myLibrary[i].title;
         authorColumn.innerHTML = myLibrary[i].author;
         pagesColumn.innerHTML = myLibrary[i].pages;
         readColumn.innerHTML = myLibrary[i].read;
-        
-    }
+    }   
+    let readBtn = document.createElement("button");
+    let removeBtn = document.createElement("button");
+    let readBtnText = document.createTextNode("Read/Not read");
+    let removeBtnText = document.createTextNode("Remove?");
+    readBtn.appendChild(readBtnText);
+    removeBtn.appendChild(removeBtnText);
+    readBtnColumn.appendChild(readBtn);
+    removeBtnColumn.appendChild(removeBtn);
     console.log(myLibrary);
 }
 
