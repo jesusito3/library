@@ -29,6 +29,7 @@ function display() {
         authorColumn.innerHTML = myLibrary[i].author;
         pagesColumn.innerHTML = myLibrary[i].pages;
         readColumn.innerHTML = myLibrary[i].read;
+        row.setAttribute("id", "book-" + [i]);
     }   
     let readBtn = document.createElement("button");
     let removeBtn = document.createElement("button");
@@ -38,7 +39,6 @@ function display() {
     removeBtn.appendChild(removeBtnText);
     readBtnColumn.appendChild(readBtn);
     removeBtnColumn.appendChild(removeBtn);
-    console.log(myLibrary);
 }
 
 const newBookButton = document.getElementById("new-book");
